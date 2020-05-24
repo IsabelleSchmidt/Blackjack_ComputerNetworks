@@ -1,0 +1,125 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+#stay{
+	-fx-color: #8B0000 ;
+	-fx-font-weight: bold;
+	-fx-font-size: 25;
+	-fx-text-fill: white; 
+	-fx-pref-height: 18mm;
+	-fx-pref-width: 30mm;
+	
+}
+#give{
+	-fx-color: #8B0000 ;
+	-fx-font-weight: bold;
+	-fx-font-size: 25;
+	-fx-text-fill: white; 
+	-fx-pref-height: 18mm;
+	-fx-pref-width: 30mm;
+}
+#aufdecken{
+	-fx-color: #8B0000 ;
+	-fx-font-weight: bold;
+	-fx-font-size: 25;
+	-fx-text-fill: white; 
+	-fx-pref-height: 18mm;
+	-fx-pref-width: 30mm;
+}
+#stack{
+	-fx-background-color: #006400 ;
+	-fx-font-weight: bold;	
+}
+#stack2{
+	-fx-background-color: #006400 ;
+	-fx-font-weight: bold;
+}
+#stack3{
+	-fx-background-color: #006400 ;
+	-fx-font-weight: bold;	
+	-fx-text-fill: black;
+}
+#blackjack{
+	-fx-font-size:45;
+	-fx-text-fill:white;
+	
+}
+#score{
+	-fx-font-size:25;
+	-fx-text-fill:white;
+	-fx-alignment: baseline-right;
+}
+#karte{
+	-fx-font-size:12;
+	-fx-text-fill:white;
+	-fx-alignment: baseline-center;
+}
+#error-label{
+	-fx-font-size:12;
+	-fx-text-fill:red;
+	-fx-font-weight: bold;
+	-fx-alignment: baseline-center;
+}
+#dealerin{
+	-fx-alignment: top-center ;
+}
+#start{
+	-fx-color: #8B0000 ;
+	-fx-font-weight: bold;
+	-fx-font-size: 25;
+	-fx-text-fill: white; 
+	-fx-pref-height: 18mm;
+	-fx-pref-width: 30mm;
+}
+#exit{
+	-fx-color: #8B0000 ;
+	-fx-font-weight: bold;
+	-fx-font-size: 25;
+	-fx-text-fill: white; 
+	-fx-pref-height: 18mm;
+	-fx-pref-width: 30mm;
+}
+#buttonsstart{
+	-fx-background-color: #006400;
+	-fx-alignment: center;
+}
+#middle{
+	-fx-background-color: #006400;
+}
+#startv{
+	-fx-background-color: #006400;
+}
+#text{
+	-fx-font-weight: bold;
+	-fx-font-size: 90.0pt; 
+	-fx-text-fill: white;
+}
+#headerstart{
+	-fx-background-color: #006400;
+}
+#wlView{
+	-fx-background-color: #006400;
+}
+.againButton{
+	-fx-color: #8B0000 ;
+	-fx-font-weight: bold;
+	-fx-font-size: 25;
+	-fx-text-fill: white; 
+	-fx-pref-height: 18mm;
+	-fx-pref-width: 30mm;
+}
+#textW{
+	-fx-font-weight: bold;
+	-fx-font-size: 90.0pt; 
+	-fx-text-fill: white;
+}
+#textL{
+	-fx-font-weight: bold;
+	-fx-font-size: 90.0pt; 
+	-fx-text-fill: white;
+}
+.choiceBox{
+	-fx-background-color: #006400;
+}
+.endtextBox{
+	-fx-background-color: #006400;
+}
