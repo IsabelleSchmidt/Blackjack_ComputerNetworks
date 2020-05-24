@@ -61,24 +61,51 @@ public class GameState {
 		this.dielerScore += kartendeck.getKarte().getWert();
 		
 		//Pruefe den Stand
-		if (playerScore.get() >= TWENTY_ONE || dielerScore >= TWENTY_ONE) {
+		if (playerScore.get() >= TWENTY_ONE) {
+			running.set(false);
 			
 			if (playerScore.get() > TWENTY_ONE) {
 				gameResult = GameResults.VERLOREN;
-				
-			} else if (playerScore.get() == TWENTY_ONE) {
-				
-				if (dielerScore == TWENTY_ONE) {
-					gameResult = GameResults.UNENTSCHIEDEN;
-				} else if (dielerScore > TWENTY_ONE) {
-					gameResult = GameResults.GEWONNEN;
-				}
-				
-			} else {
-				gameResult = GameResults.GEWONNEN;
+				return karte;
 			}
 			
+			if (playerScore.get() == TWENTY_ONE) {
+				if (dielerScore > TWENTY_ONE) {
+					gameResult = GameResults.GEWONNEN;
+				} else if (dielerScore < TWENTY_ONE) {
+					gameResult = GameResults.GEWONNEN;
+				} else if (dielerScore == TWENTY_ONE) {
+					gameResult = GameResults.UNENTSCHIEDEN;
+				}
+				return karte;
+			}
+		}
+		
+		if (dielerScore >= TWENTY_ONE) {
 			running.set(false);
+			
+			if (dielerScore > TWENTY_ONE) {
+				if (playerScore.get() == TWENTY_ONE) {
+					gameResult = GameResults.GEWONNEN;
+				} else if (playerScore.get() < TWENTY_ONE) {
+					gameResult = GameResults.GEWONNEN;
+				} else if (playerScore.get() > TWENTY_ONE) {
+					gameResult = GameResults.VERLOREN;
+				}
+				return karte;
+			}
+			
+			if (dielerScore == TWENTY_ONE) {
+				if (playerScore.get() > TWENTY_ONE) {
+					gameResult = GameResults.VERLOREN;
+				} else if (playerScore.get() < TWENTY_ONE) {
+					gameResult = GameResults.VERLOREN;
+				} else if (playerScore.get() == TWENTY_ONE) {
+					gameResult = GameResults.UNENTSCHIEDEN;
+				}
+				return karte;
+			}
+			
 		}
 		
 		return karte;
