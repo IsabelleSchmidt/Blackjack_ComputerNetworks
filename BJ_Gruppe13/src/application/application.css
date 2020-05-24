@@ -26,15 +26,15 @@
 	-fx-pref-width: 30mm;
 }
 #stack{
-	-fx-background-color: #006400 ;
+	
 	-fx-font-weight: bold;	
 }
 #stack2{
-	-fx-background-color: #006400 ;
+	
 	-fx-font-weight: bold;
 }
 #stack3{
-	-fx-background-color: #006400 ;
+	
 	-fx-font-weight: bold;	
 	-fx-text-fill: black;
 }
@@ -59,9 +59,7 @@
 	-fx-font-weight: bold;
 	-fx-alignment: baseline-center;
 }
-#dealerin{
-	-fx-alignment: top-center ;
-}
+
 #start{
 	-fx-color: #8B0000 ;
 	-fx-font-weight: bold;
@@ -83,9 +81,6 @@
 	-fx-alignment: center;
 }
 #middle{
-	-fx-background-color: #006400;
-}
-#startv{
 	-fx-background-color: #006400;
 }
 #text{

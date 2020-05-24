@@ -6,102 +6,103 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
-public class GameView extends BorderPane {
+public class GameView extends VBox {
 	
-	BorderPane game;
 	Button stay;
 	Button give;	
 	Button menu;
-	
-	Label blackjack;
+
 	Label score;
 	Label letzteKarte;
 	Label gameResult;
 	Label dielerScore;
 	Label errorLabel;
 	
-	StackPane topBox;
-	GridPane centerBox;
-	StackPane bottomBox;
-	
-	HBox buttons;
-	HBox title;
-	HBox gameInfoBox;
-	VBox errorBox;
-	HBox header;
-	
 	Image img = new Image(getClass().getResource("../../ressources/image/DealerinPNG.png").toExternalForm());
-	ImageView imgview;
-	
 	
 	public GameView() {
-		
-		game = new BorderPane();
-		
-		topBox = new StackPane();
-		topBox.setId("stack");
-		
-		centerBox = new GridPane();
-		centerBox.setId("stack2");
-		
-		bottomBox = new StackPane();
-		bottomBox.setId("stack3");
-		
-		buttons = new HBox();
-		buttons.setPrefSize(150, 150);
-		
-		title = new HBox();
-		gameInfoBox = new HBox();
-		header = new HBox();
-		errorBox = new VBox();
-		
-		imgview = new ImageView(img);
-		imgview.setId("dealerin");
-		imgview.setFitHeight(600.0);
-		imgview.setFitWidth(450.0);
-		
-		blackjack = new Label();
+		//TOP
+		HBox header = new HBox();
+		Label blackjack = new Label();
 		blackjack.setId("blackjack");
 		blackjack.setText("BLACKJACK");
-		blackjack.setAlignment(Pos.TOP_CENTER);
 		blackjack.setPadding(new Insets(30));
 		
+		HBox title = new HBox();
+		title.setAlignment(Pos.TOP_CENTER);
+		title.getChildren().addAll(blackjack);
+		title.setPrefWidth(300);
+		
+		HBox scoreBox = new HBox();
 		score = new Label();
 		score.setId("score");
 		score.setText("SCORE: ");
-		score.setAlignment(Pos.CENTER_RIGHT);
-		score.setPadding(new Insets(40));
 		
+		scoreBox.getChildren().add(score);
+		HBox.setMargin(score, new Insets(50));
+		scoreBox.setAlignment(Pos.CENTER_LEFT);
+		scoreBox.setPrefWidth(300);
+		
+		header.setAlignment(Pos.TOP_CENTER);
+		header.getChildren().addAll(title, scoreBox);
+		
+		//INFO BOX
+		HBox gameInfoBox = new HBox();
+		
+		HBox kartenBox = new HBox();
 		letzteKarte = new Label("Ihre letzte Karte: ");
 		letzteKarte.setId("karte");
-		letzteKarte.setAlignment(Pos.CENTER);
-		HBox.setMargin(letzteKarte,new Insets(20,20,40,20));
+		kartenBox.getChildren().add(letzteKarte);
+		kartenBox.setPrefWidth(200);
+		kartenBox.setAlignment(Pos.CENTER);
+		HBox.setMargin(letzteKarte,new Insets(20));
 		
+		HBox resultBox = new HBox();
 		gameResult = new Label();
 		gameResult.setId("karte");
-		gameResult.setAlignment(Pos.CENTER);
-		HBox.setMargin(gameResult,new Insets(20,20,40,20));
+		resultBox.getChildren().add(gameResult);
+		resultBox.setPrefWidth(150);
+		resultBox.setAlignment(Pos.CENTER);
+		HBox.setMargin(gameResult,new Insets(20));
 		
+		HBox dielerBox = new HBox();
 		dielerScore = new Label();
 		dielerScore.setId("karte");
-		dielerScore.setAlignment(Pos.CENTER);
-		HBox.setMargin(dielerScore,new Insets(20,20,40,20));
+		dielerBox.getChildren().add(dielerScore);
+		dielerBox.setPrefWidth(200);
+		dielerBox.setAlignment(Pos.CENTER);
+		HBox.setMargin(dielerScore,new Insets(20));
+		
+		gameInfoBox.setAlignment(Pos.CENTER);
+		gameInfoBox.getChildren().addAll(kartenBox, resultBox, dielerBox);
+		
+		//CENTER
+		VBox forImg = new VBox();
+		ImageView imgview = new ImageView(img);
+		imgview.setFitHeight(250);
+		imgview.setFitWidth(250);
+		forImg.getChildren().add(imgview);
+		forImg.setAlignment(Pos.CENTER);
+		VBox.setMargin(imgview, new Insets(40));
 		
 		
-		gameInfoBox.getChildren().addAll(letzteKarte, gameResult, dielerScore);
-		
+		//ERROR BOX
+		HBox errorBox = new HBox();
 		errorLabel = new Label();
 		errorLabel.setId("error-label");
 		VBox.setMargin(errorLabel,new Insets(20,20,40,20));
 		
+		errorBox.setAlignment(Pos.CENTER);
 		errorBox.getChildren().add(errorLabel);
-		errorBox.setAlignment(Pos.BOTTOM_CENTER);
+		errorBox.setPrefHeight(50);
+		HBox.setMargin(errorLabel, new Insets(20));
+		
+		//BOTTOM
+		HBox buttons = new HBox();
+		buttons.setPrefSize(150, 150);
 		
 		stay = new Button();
 		stay.setText("STAY");
@@ -122,26 +123,13 @@ public class GameView extends BorderPane {
 		menu.setDisable(true);
 		HBox.setMargin(menu,new Insets(20,20,40,20));
 		
-		header.getChildren().addAll(title, score);
-		title.getChildren().addAll(blackjack);
-		title.setAlignment(Pos.CENTER);
-		header.setAlignment(Pos.TOP_CENTER);
-		
 		buttons.getChildren().addAll(give, stay, menu);
 		buttons.setAlignment(Pos.BOTTOM_CENTER);
 		
-		topBox.getChildren().addAll(header);
-		centerBox.getChildren().addAll(gameInfoBox, errorBox, imgview);
-		bottomBox.getChildren().addAll(buttons);
 		
-		centerBox.setAlignment(Pos.BOTTOM_CENTER);
 		
 		this.setStyle("-fx-background-color: #006400");
-		this.setPadding(new Insets(50));	
-		this.setTop(topBox);
-		this.setCenter(centerBox);
-		this.setBottom(bottomBox);
-			
+		this.getChildren().addAll(header, gameInfoBox, forImg, errorBox, buttons);
 	}
 
 }

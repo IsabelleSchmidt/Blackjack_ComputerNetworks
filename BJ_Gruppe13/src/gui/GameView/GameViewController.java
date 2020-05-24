@@ -48,8 +48,7 @@ public class GameViewController extends ViewController<Main> {
 		stay = view.stay;
 		give = view.give;
 		newGame = view.menu;
-		
-		blackjack = view.blackjack;
+
 		score = view.score;
 		letzteKarte = view.letzteKarte;
 		gameResult = view.gameResult;

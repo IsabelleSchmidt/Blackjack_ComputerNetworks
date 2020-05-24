@@ -48,7 +48,7 @@ public class Main extends Application {
 			
 			Pane root = scenes.get(Scenes.START_VIEW);
 			
-			scene = new Scene(root, 1000, 1000);
+			scene = new Scene(root, 850, 850);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {

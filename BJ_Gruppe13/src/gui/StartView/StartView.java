@@ -35,6 +35,7 @@ public class StartView extends VBox {
 		errorLabel = new Label();
 		errorLabel.setId("error-label");
 		
+		VBox.setMargin(errorLabel, new Insets(0,0,40,0));
 		errorBox.getChildren().add(errorLabel);
 		
 		buttonsstart = new HBox();
@@ -78,6 +79,7 @@ public class StartView extends VBox {
 		
 		buttonsstart.getChildren().addAll(start, exit);
 		
+		this.setStyle("-fx-background-color: #006400");
 		this.getChildren().addAll(headerstart, middle, buttonsstart);
 	}
 }
